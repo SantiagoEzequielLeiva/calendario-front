@@ -1,0 +1,32 @@
+<div class="container">
+	<section class="my-4">
+		<div class="row">
+			<div class="col-md-4">
+				<form>
+					<div class="form-group">
+						<label for="select-materias">Materia</label>
+						<select class="form-control" id="select-materias" ng-model="seleccion.materia" ng-change="habilitarSeleccionDeProfesor()">
+							<option value="">Seleccione una materia</option>
+							<option ng-repeat="materia in materias" value="{{materia.id}}">{{ materia.descripcion }}</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="select-profesor">Profesor</label>
+						<select class="form-control" id="select-profesor" ng-model="seleccion.profesor" ng-disabled="!seleccion.materia">
+							<option value="">Seleccione profesor</option>
+							<option value="1">Profesor 1</option>
+							<option value="2">Profesor 2</option>
+							<!-- <option ng-repeat="profesor in profesores" value="{{profesor.id}}">{{ profesor.descripcion }}</option> -->
+						</select>
+					</div>
+					<div class="form-group">
+						<div class="btn-group d-flex" role="group" aria-label="Botones">
+							<button type="button" class="btn btn-dark w-100" ng-click="reiniciarSeleccion()"><i class="fas fa-sync"></i>&nbsp; Reiniciar</button>
+							<button type="button" class="btn btn-success w-100" ng-disabled="!puedeAgregarMateria()" ng-click="agregarMateria()"><i class="fas fa-plus"></i>&nbsp; Agregar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</div>
