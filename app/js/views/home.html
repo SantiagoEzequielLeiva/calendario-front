@@ -7,16 +7,14 @@
 						<label for="select-materias">Materia</label>
 						<select class="form-control" id="select-materias" ng-model="seleccion.materia" ng-change="habilitarSeleccionDeProfesor()">
 							<option value="">Seleccione una materia</option>
-							<option ng-repeat="materia in materias" value="{{materia.id}}">{{ materia.descripcion }}</option>
+							<option ng-repeat="materia in materias" value="{{ materia.id }}">{{ materia.descripcion }}</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="select-profesor">Profesor</label>
 						<select class="form-control" id="select-profesor" ng-model="seleccion.profesor" ng-disabled="!seleccion.materia">
 							<option value="">Seleccione profesor</option>
-							<option value="1">Profesor 1</option>
-							<option value="2">Profesor 2</option>
-							<!-- <option ng-repeat="profesor in profesores" value="{{profesor.id}}">{{ profesor.descripcion }}</option> -->
+							<option ng-repeat="profesor in profesores" value="{{ profesor.id }}">{{ profesor.nombre }}</option>
 						</select>
 					</div>
 					<div class="form-group">
